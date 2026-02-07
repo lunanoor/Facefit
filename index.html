@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FaceFit AI | Premium Personal Styling</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-globes">
+        <div class="globe globe-1"></div>
+        <div class="globe globe-2"></div>
+        <div class="globe globe-3"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> FaceFit AI
+            </div>
+            <p class="subtitle">Discover your perfect style with AI-powered face analysis.</p>
+        </header>
+
+        <main>
+            <section class="upload-section" id="upload-section">
+                <div class="upload-box" id="drop-area">
+                    <div class="icon-container">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                    </div>
+                    <h3>Upload Your Photo</h3>
+                    <p>Drag & drop or click to browse</p>
+                    <input type="file" id="file-input" accept="image/*" hidden>
+                    <button class="btn-primary" onclick="document.getElementById('file-input').click()">Choose Image</button>
+                    <p class="hint">For best results, use a clear, front-facing photo.</p>
+                </div>
+            </section>
+
+            <section class="preview-section hidden" id="preview-section">
+                <div class="image-container">
+                    <img id="image-preview" src="" alt="Preview">
+                    <div class="scan-overlay"></div>
+                </div>
+                <div class="analyzing-text">
+                    <i class="fa-solid fa-circle-notch fa-spin"></i> Analyzing facial features...
+                </div>
+            </section>
+
+            <section class="results-section hidden" id="results-section">
+                <div class="results-header">
+                    <h2>Your Style Profile</h2>
+                    <button class="btn-secondary" onclick="resetApp()">Analyze Another</button>
+                </div>
+
+                <div class="analysis-summary">
+                    <div class="summary-card">
+                        <div class="icon"><i class="fa-regular fa-face-smile"></i></div>
+                        <div>
+                            <h4>Face Shape</h4>
+                            <p id="result-shape">Loading...</p>
+                        </div>
+                    </div>
+                    <div class="summary-card">
+                        <div class="icon"><i class="fa-solid fa-palette"></i></div>
+                        <div>
+                            <h4>Skin Tone</h4>
+                            <p id="result-tone">Loading...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recommendations-grid">
+                    <div class="rec-card">
+                        <h3><i class="fa-solid fa-scissors"></i> Hairstyles</h3>
+                        <p class="card-hint" id="hair-tips">Tips loading...</p>
+                        <ul id="hair-list" class="styled-list"></ul>
+                    </div>
+                    
+                    <div class="rec-card">
+                        <h3><i class="fa-solid fa-droplet"></i> Hair Colors</h3>
+                        <ul id="hair-color-list" class="color-list"></ul>
+                    </div>
+
+                    <div class="rec-card">
+                        <h3><i class="fa-solid fa-shirt"></i> Clothing Palette</h3>
+                        <ul id="clothing-color-list" class="color-list"></ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 FaceFit AI. Processing matches your privacy.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
